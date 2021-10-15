@@ -1,0 +1,31 @@
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
+import CoinsScreen from './CoinsScreen';
+import CoinDetailScreen from '../coinDetail/CoinDetailScreen';
+import colors from './../../res/colors';
+const Stack = createStackNavigator();
+
+
+export const CoinsStack = () => {
+    return (
+        <Stack.Navigator
+            screenOptions={{
+                headerStyle: {
+                    backgroundColor: colors.blackPearl
+                },
+                headerTintColor: colors.white
+            }}
+        >
+
+            <Stack.Screen
+                name='coins'
+                component={CoinsScreen}
+            />
+
+            <Stack.Screen
+                name='CoinDetail'
+                component={CoinDetailScreen}
+            />
+        </Stack.Navigator>
+    )
+}
